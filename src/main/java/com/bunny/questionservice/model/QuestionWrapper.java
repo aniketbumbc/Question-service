@@ -1,5 +1,8 @@
 package com.bunny.questionservice.model;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 public class QuestionWrapper {
 	
 	private Integer id;

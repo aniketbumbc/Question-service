@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bunny.questionservice.model.Question;
+import com.bunny.questionservice.model.QuestionWrapper;
+import com.bunny.questionservice.model.Response;
 import com.bunny.questionservice.service.QuestionService;
 
 @RestController
@@ -41,6 +44,25 @@ public class QuestionController {
 	@DeleteMapping("deleteQuestion/{id}")
 	public String getQuestionByCategory(@PathVariable Integer id) {
 		return questionService.deletQuestionById(id);
+	}
+	
+	@GetMapping("genereate")
+	public ResponseEntity <List<Integer>> getQuestoinsForQuiz(@RequestParam String categoryName, @RequestParam Integer numQuestions){
+		
+		return questionService.getQuestoinsForQuiz(categoryName,numQuestions);
+		
+	}
+	
+	
+	@PostMapping("getQuestions")
+	public ResponseEntity<List<QuestionWrapper>> getQuestionsFromId(@RequestBody List<Integer>questionsIds ){
+		return questionService.getQuestionsFromId(questionsIds);	
+	}
+	
+	@PostMapping("getScore")
+	public ResponseEntity <Integer> getScore(@RequestBody List<Response> responses){
+		
+		return questionService.getScore(responses);
 	}
 
 }
