@@ -12,7 +12,6 @@ import com.bunny.questionservice.doa.QuestionDao;
 import com.bunny.questionservice.model.Question;
 import com.bunny.questionservice.model.QuestionWrapper;
 import com.bunny.questionservice.model.Response;
-import com.bunny.quizapp.model.Quiz;
 
 @Service
 public class QuestionService {
