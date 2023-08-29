@@ -80,6 +80,7 @@ public class QuestionService {
 
 			wrapper.setId(question.getId());
 			wrapper.setLevel(question.getLevel());
+			wrapper.setQuestionTitle(question.getQuestionTitle());
 			wrapper.setOption1(question.getOption1());
 			wrapper.setOption2(question.getOption2());
 			wrapper.setOption3(question.getOption3());
